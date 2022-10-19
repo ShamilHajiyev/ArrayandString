@@ -6,8 +6,13 @@ namespace StringBuilder1
     {
         static void Main(string[] args)
         {
+            //Task: Verilen cumleni capitalized formatinda geriye qaytaran bir method yazin.
+
+            Console.WriteLine("Enter a sentence:");
             string sentence = Console.ReadLine();
+            Console.WriteLine("\nCapitalized:");
             Console.WriteLine(FirstToUpper(sentence));
+            Console.WriteLine(sentence);
         }
         public static string FirstToUpper(string sentence)
         {
@@ -15,14 +20,7 @@ namespace StringBuilder1
             string[] words = sentence.Split();
             for (int i = 0; i < words.Length; i++)
             {
-                if (words[i].Length > 1)
-                {
                     words[i] = char.ToUpper(words[i][0]) + words[i].Substring(1);
-                }
-                else
-                {
-                    words[i] = Convert.ToString(char.ToUpper(words[i][0]));
-                }
             }
             string newSentence = string.Join(' ', words);
             return newSentence;
